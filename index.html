@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registro de Venue | Directorio de Bodas y Eventos</title>
+  <meta name="description" content="Formulario de relevamiento de venues para bodas y eventos en Paraguay." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+
+    <header class="header">
+      <div class="badge">Relevamiento 2026</div>
+      <h1>Estamos relevando los principales venues para bodas y eventos en Paraguay</h1>
+      <p class="lead">
+        Estamos desarrollando una plataforma para que parejas, wedding planners y organizadores puedan
+        <strong>descubrir y comparar los mejores venues del país</strong>.
+      </p>
+      <p class="lead">
+        Creemos que <strong>tu venue es un referente del sector</strong>, por eso nos gustaría incluirlo en esta selección.
+        Completar el formulario toma <strong>3–5 minutos</strong> y nos permite publicar información clara y confiable.
+      </p>
+
+      <ul class="bullets">
+        <li><strong>Tiempo estimado:</strong> 3–5 minutos</li>
+        <li><strong>Información solicitada:</strong> capacidad, servicios, infraestructura y contacto</li>
+        <li><strong>Publicación:</strong> revisamos la información antes de publicarla</li>
+      </ul>
+    </header>
+
+    <section class="card">
+
+      <!-- FORM -->
+      <form id="venueForm">
+        <!-- 1) Información básica -->
+        <h2>1) Información básica</h2>
+
+        <div class="grid">
+          <label>
+            Nombre del venue *
+            <input name="venue_name" required maxlength="120" placeholder="Ej: Talleyrand Costanera" />
+          </label>
+
+          <label>
+            Ciudad *
+            <input name="city" required maxlength="80" placeholder="Ej: Asunción" />
+          </label>
+
+          <label>
+            Departamento
+            <input name="department" maxlength="80" placeholder="Ej: Central" />
+          </label>
+
+          <label>
+            Dirección
+            <input name="address" maxlength="160" placeholder="Calle y número / referencia" />
+          </label>
+
+          <label>
+            Link Google Maps
+            <input name="google_maps_url" type="url" placeholder="https://maps.google.com/..." />
+          </label>
+
+          <label>
+            Sitio web
+            <input name="website" type="url" placeholder="https://..." />
+          </label>
+
+          <label>
+            Instagram
+            <input name="instagram" placeholder="https://instagram.com/tuvenue" />
+          </label>
+
+          <label>
+            Email *
+            <input name="email" type="email" required placeholder="contacto@venue.com" />
+          </label>
+
+          <label>
+            Teléfono / WhatsApp *
+            <input name="phone" required placeholder="+595..." />
+          </label>
+        </div>
+
+        <label class="inline">
+          <input type="checkbox" name="publish_consent" required />
+          Autorizo la publicación de esta información en la plataforma. *
+        </label>
+
+        <hr/>
+
+        <!-- 2) Tipo y estilo -->
+        <h2>2) Tipo y estilo</h2>
+
+        <div class="grid">
+          <label>
+            Tipo de venue *
+            <select name="venue_type" required>
+              <option value="" selected disabled>Elegí una opción</option>
+              <option value="salon">Salón de eventos</option>
+              <option value="quinta">Quinta / Jardín</option>
+              <option value="hotel">Hotel</option>
+              <option value="resort">Resort</option>
+              <option value="club">Club</option>
+              <option value="convention_center">Centro de convenciones</option>
+              <option value="restaurant">Restaurante</option>
+              <option value="other">Otro</option>
+            </select>
+          </label>
+
+          <label>
+            Estilo (principal)
+            <select name="venue_style">
+              <option value="" selected>—</option>
+              <option value="clasico">Clásico</option>
+              <option value="moderno">Moderno</option>
+              <option value="rustico">Rústico</option>
+              <option value="industrial">Industrial</option>
+              <option value="campo">Campo / Natural</option>
+              <option value="boutique">Boutique</option>
+              <option value="lujo">Lujo</option>
+            </select>
+          </label>
+
+          <label>
+            Modalidad *
+            <select name="indoor_outdoor" required>
+              <option value="" selected disabled>Elegí una opción</option>
+              <option value="indoor">Interior</option>
+              <option value="outdoor">Exterior</option>
+              <option value="mixed">Mixto</option>
+            </select>
+          </label>
+        </div>
+
+        <hr/>
+
+        <!-- 3) Capacidad -->
+        <h2>3) Capacidad</h2>
+        <p class="hint">Si no contás con un número exacto, podés indicar una estimación realista.</p>
+
+        <div class="grid">
+          <label>
+            Capacidad mínima recomendada
+            <input name="capacity_min" type="number" min="0" step="1" placeholder="Ej: 80" />
+          </label>
+
+          <label>
+            Capacidad cena sentada
+            <input name="capacity_dinner" type="number" min="0" step="1" placeholder="Ej: 250" />
+          </label>
+
+          <label>
+            Capacidad cóctel
+            <input name="capacity_cocktail" type="number" min="0" step="1" placeholder="Ej: 350" />
+          </label>
+
+          <label>
+            Capacidad máxima total
+            <input name="capacity_max" type="number" min="0" step="1" placeholder="Ej: 300" />
+          </label>
+
+          <label>
+            Cantidad de salones
+            <input name="salons_count" type="number" min="0" step="1" placeholder="Ej: 2" />
+          </label>
+
+          <label>
+            Superficie salón principal (m²)
+            <input name="main_hall_area_m2" type="number" min="0" step="1" placeholder="Ej: 500" />
+          </label>
+
+          <label>
+            Superficie exterior/jardín (m²)
+            <input name="outdoor_area_m2" type="number" min="0" step="1" placeholder="Ej: 1000" />
+          </label>
+        </div>
+
+        <hr/>
+
+        <!-- 4) Infraestructura -->
+        <h2>4) Infraestructura</h2>
+
+        <div class="grid">
+          <label>
+            ¿Tiene estacionamiento? *
+            <select name="parking_available" required>
+              <option value="" selected disabled>Elegí una opción</option>
+              <option value="sí">Sí</option>
+              <option value="no">No</option>
+              <option value="limitado">Limitado</option>
+            </select>
+          </label>
+
+          <label>
+            Capacidad estacionamiento (vehículos)
+            <input name="parking_capacity" type="number" min="0" step="1" placeholder="Ej: 120" />
+          </label>
+
+          <label>
+            ¿Tiene Plan B por lluvia? *
+            <select name="planB_rain" required>
+              <option value="" selected disabled>Elegí una opción</option>
+              <option value="sí">Sí</option>
+              <option value="no">No</option>
+              <option value="parcial">Parcial</option>
+            </select>
+          </label>
+
+          <label>
+            Horario máximo de evento
+            <input name="event_end_time" placeholder="Ej: 05:00" />
+          </label>
+
+          <label>
+            Horario máximo de música
+            <input name="music_end_time" placeholder="Ej: 04:00" />
+          </label>
+
+          <label>
+            ¿Proveedores exclusivos?
+            <select name="exclusive_suppliers">
+              <option value="" selected>—</option>
+              <option value="sí">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+        </div>
+
+        <fieldset class="fieldset">
+          <legend>Comodidades (marcá lo que aplica)</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="air_conditioning" value="sí"> Aire acondicionado</label>
+            <label><input type="checkbox" name="generator" value="sí"> Generador</label>
+            <label><input type="checkbox" name="dance_floor" value="sí"> Pista de baile</label>
+            <label><input type="checkbox" name="stage" value="sí"> Escenario</label>
+            <label><input type="checkbox" name="ceremony_area" value="sí"> Área para ceremonia</label>
+            <label><input type="checkbox" name="rooms_available" value="sí"> Habitaciones</label>
+            <label><input type="checkbox" name="lake_view" value="sí"> Vista al lago</label>
+            <label><input type="checkbox" name="river_view" value="sí"> Vista al río</label>
+            <label><input type="checkbox" name="garden_view" value="sí"> Vista a jardín</label>
+            <label><input type="checkbox" name="terrace" value="sí"> Terraza</label>
+          </div>
+        </fieldset>
+
+        <hr/>
+
+        <!-- 5) Servicios -->
+        <h2>5) Servicios</h2>
+
+        <div class="grid">
+          <label>
+            Catering
+            <select name="catering">
+              <option value="" selected>—</option>
+              <option value="propio">Catering propio</option>
+              <option value="externo">Solo catering externo</option>
+              <option value="ambos">Ambas opciones</option>
+            </select>
+          </label>
+
+          <label>
+            ¿Permite catering externo?
+            <select name="external_catering_allowed">
+              <option value="" selected>—</option>
+              <option value="sí">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+
+          <label>
+            Rango de precio (alquiler)
+            <select name="price_range">
+              <option value="" selected>—</option>
+              <option value="<1000">Menos de USD 1.000</option>
+              <option value="1000-3000">USD 1.000–3.000</option>
+              <option value="3000-6000">USD 3.000–6.000</option>
+              <option value="6000+">USD 6.000+</option>
+            </select>
+          </label>
+        </div>
+
+        <fieldset class="fieldset">
+          <legend>¿Qué incluye / ofrece?</legend>
+          <div class="checks">
+            <label><input type="checkbox" name="furniture_included" value="sí"> Mobiliario</label>
+            <label><input type="checkbox" name="decoration_available" value="sí"> Decoración</label>
+            <label><input type="checkbox" name="lighting_sound" value="sí"> Sonido/iluminación</label>
+            <label><input type="checkbox" name="wedding_planner" value="sí"> Wedding planner</label>
+            <label><input type="checkbox" name="security_service" value="sí"> Seguridad</label>
+            <label><input type="checkbox" name="cleaning_service" value="sí"> Limpieza</label>
+          </div>
+        </fieldset>
+
+        <hr/>
+
+        <!-- 6) Descripción -->
+        <h2>6) Descripción</h2>
+
+        <label>
+          Descripción corta (aparece en la ficha)
+          <textarea name="description" rows="4" maxlength="600" placeholder="Contá en 3–5 líneas qué ofrece el venue..."></textarea>
+        </label>
+
+        <label>
+          ¿Por qué deberían elegirlos?
+          <textarea name="why_choose_us" rows="4" maxlength="600" placeholder="Ej: ubicación, experiencia, plan B real, catering propio..."></textarea>
+        </label>
+
+        <label>
+          Links de fotos (Drive/Dropbox/álbum) — separados por coma
+          <textarea name="photos_urls" rows="3" placeholder="https://... , https://..."></textarea>
+        </label>
+
+        <!-- ocultos -->
+        <input type="hidden" name="slug" />
+        <input type="hidden" name="status" value="pending" />
+
+        <div class="actions">
+          <button type="submit" id="submitBtn">Enviar registro</button>
+          <span class="status" id="statusMsg" aria-live="polite"></span>
+        </div>
+
+        <!-- Mensaje final de agradecimiento -->
+        <div class="thanks" id="thanksBox" hidden>
+          <h3>¡Gracias por completar el relevamiento!</h3>
+          <p>
+            Recibimos la información de tu venue. En las próximas semanas vamos a revisar los datos
+            y, si está todo correcto, publicaremos la ficha en el directorio.
+          </p>
+          <p class="small">
+            Si necesitás actualizar algo, podés responder este mismo correo/mensaje con la corrección.
+          </p>
+        </div>
+
+      </form>
+    </section>
+
+    <footer class="footer">
+      <small>Al enviar, aceptás que revisemos la información antes de publicarla.</small>
+    </footer>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
